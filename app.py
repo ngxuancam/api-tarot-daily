@@ -1,6 +1,5 @@
 # MTY1NTU3NzAwMA==-MmI4YTYxNTk0YjFmNGM0ZGIwOTAyYThhMzk1Y2VkOTM=
 import urllib.request
-import requests
 from fastapi import FastAPI
 
 app = FastAPI()
