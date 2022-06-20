@@ -1,6 +1,8 @@
 # MTY1NTU3NzAwMA==-MmI4YTYxNTk0YjFmNGM0ZGIwOTAyYThhMzk1Y2VkOTM=
 import urllib.request
+import requests
 from fastapi import FastAPI
+import json
 
 app = FastAPI()
 
@@ -20,9 +22,12 @@ def index():
     res3 = res[: res2+1]
 
 
-    # url = "https://divineapi.com/api/1.0/get_daily_tarot.php"
-    # data = {"api_key": res3}
+    url = "https://divineapi.com/api/1.0/get_daily_tarot.php"
+    data = {"api_key": res3}
 
-    # response = requests.post(url, data).text
-
-    return {"data": res3}
+    response = requests.post(url, data).json()
+    # stud_obj = json.dumps(response)
+    # return {"data": res3}
+    return {
+        "data": response
+    }
